@@ -39,7 +39,7 @@ function getForcast (city) {
 
     return axios.get(url)
         .then(function (forecastData) {
-            console.log(forecastData.data)
+            return forecastData.data
         })
 }
 
