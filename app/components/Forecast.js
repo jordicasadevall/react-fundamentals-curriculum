@@ -3,6 +3,7 @@ var PropTypes = React.PropTypes;
 var utils = require('../helpers/utils');
 var getDate = utils.getDate;
 var convertTemp = utils.convertTemp;
+var DayItem = require('./DayItem');
 
 var styles = {
     container: {
@@ -35,17 +36,6 @@ var styles = {
     weather: {
         height: 130
     }
-}
-
-function DayItem (props) {
-    var date = getDate(props.day.dt);
-    var icon = props.day.weather[0].icon;
-    return (
-        <div style={styles.dayContainer} onClick={props.handleClick}>
-            <img style={styles.weather} src={'./app/images/weather-icons/' + icon + '.svg'} alt='Weather' />
-            <h2 style={styles.subheader}>{date}</h2>
-        </div>
-    )
 }
 
 function ForecastUI (props) {
